@@ -12,6 +12,7 @@ COPY package*.json .
 
 # - install packages (optimise image build - run just install after copying package.json, we hope these will change rarer as the code, so we can reuse this image layer too)
 RUN npm install
+RUN apk add musl libgcc libstdc++ git curl wget bash ca-certificates gcompat openssh-client
 
 # - copy the rest of the code (except the ones in .dockerignore) (optimise image build - we expect these to change everytime, so keep this as late as possible)
 COPY . .
