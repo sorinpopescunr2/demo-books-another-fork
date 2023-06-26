@@ -30,7 +30,7 @@ function dbSyncWithRetry(maxRetries, sleepTime, db) {
     if (maxRetries <= 0) {
       throw err;
     }
-    console.log(`Could not connect to database, waiting for ${sleepTime} seconds. ${maxRetries - 1} retries left`);
+    console.log(`Could not connect to database, waiting for ${sleepTime} seconds. ${maxRetries - 1} retries left`);e
     await sleep(sleepTime * 1000); // Sleeps for 2 seconds
 
     return dbSyncWithRetry(maxRetries - 1, sleepTime, db);
@@ -45,7 +45,7 @@ function dbSyncWithRetry(maxRetries, sleepTime, db) {
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Bunnyshell - Getting Started app 230626 x1" });
+  res.json({ message: "Welcome to Bunnyshell - Getting Started app 230626 x1d" });
 });
 
 require("./app/routes/bunnystart.routes")(app);
